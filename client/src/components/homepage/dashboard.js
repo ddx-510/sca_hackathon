@@ -1,8 +1,8 @@
-import { Button, Container } from 'react-bootstrap';
+import { Button, Container, Row } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
-export let dashboard = (onLogout) => {
+import { streamUrl } from '../../utilities/url';
+export let dashboard = (onLogout, temperature, humidity) => {
     return <div id="viewport">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"/>
         <div id="sidebar">
@@ -30,6 +30,12 @@ export let dashboard = (onLogout) => {
             </Container>
         </Navbar>
         <Container fluid>
+            <Row>
+                {temperature}
+            </Row>
+            <Row>
+                {humidity}
+            </Row>
         </Container>
     </div>
 }
