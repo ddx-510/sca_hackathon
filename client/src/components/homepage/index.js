@@ -5,16 +5,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import {
   Container,
   Row,
-  Form,
-  Button,
-  Alert,
-  InputGroup,
-  Spinner,
-  CardColumns,
-  Card,
+  Button
 } from "react-bootstrap";
 
-import { listenFromStream, repeatListen } from "../../api";
+import { repeatListen } from "../../api";
+import { streamUrl } from "../../utilities/url";
 
 const dashboard = (onLogout, temperature, humidity) => {
   return <div id="viewport">
@@ -43,10 +38,15 @@ const dashboard = (onLogout, temperature, humidity) => {
               </Navbar.Collapse>
           </Container>
       </Navbar>
-      <div>
-          {temperature} + 
-          {humidity}
-      </div>
+      <Container fluid>
+            <Row>
+                temperature: {temperature}
+            </Row>
+            <Row>
+                humidity: {humidity}
+            </Row>
+            <img src={streamUrl}/>
+        </Container>
       <Container fluid>
       </Container>
   </div>
