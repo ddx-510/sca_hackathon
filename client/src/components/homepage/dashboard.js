@@ -38,4 +38,5 @@ export let dashboard = (onLogout, temperature, humidity) => {
             </Row>
         </Container>
     </div>
+
 }

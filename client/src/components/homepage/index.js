@@ -16,7 +16,7 @@ const dashboard = (onLogout, temperature, humidity) => {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"/>
       <div id="sidebar">
           <header>
-              <a href="#">My App</a>
+              <a href="#">AquaPOWERics</a>
           </header>
           <Nav defaultActiveKey="/home" className="flex-column">
           <Nav.Link href="/home"><i class="zmdi zmdi-view-dashboard"></i> Dashboard</Nav.Link>
@@ -39,16 +39,30 @@ const dashboard = (onLogout, temperature, humidity) => {
           </Container>
       </Navbar>
       <Container fluid>
-            <Row>
-                temperature: {temperature}
-            </Row>
-            <Row>
-                humidity: {humidity}
-            </Row>
+        <div class="column">
+            <div class="temperature card">
+              <h2>Temperature</h2>
+              <p><img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/64/000000/external-temperature-laundry-icongeek26-linear-colour-icongeek26.png" /></p>
+              <p id=" temp_c">{temperature}°C</p>
+            </div>
+          </div>
+    
+        <div class="column">
+          <div class="humidity card">
+            <h2>Humidity</h2>
+            <p><img src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-humidity-weather-justicon-flat-justicon.png" /></p>
+            <p id="humid">{humidity}%</p>
+          </div>
+        </div>
+
+        <div class="column-large">
+          <div class="sunlight card">
+            <h2>Camera</h2>
             <img src={streamUrl}/>
+          </div>
+        </div>
+          
         </Container>
-      <Container fluid>
-      </Container>
   </div>
 }
 
